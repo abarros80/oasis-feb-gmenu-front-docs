@@ -1,0 +1,216 @@
+MODELOS:
+
+itens
+{
+    "id": 1,
+    "nome": "Salada Cesar",
+    "activo": true,
+    "ordem": 1,
+    "fotoPath": "foto_path",
+    "descPt": "desc_pt",
+    "descFr": "desc_fr",
+    "descIng": "desc_ing",
+    "preco": 500.0,
+    "quantidade": 30.0,
+    "unidadeMedidaEnum": "GRAMA",
+    "dataCadastro": "2022-05-19T18:10:04",
+    "idUserCadastro": 1,
+    "_links": {
+        "self": {
+            "href": "http://localhost:8686/itens/1"
+        },
+        "item": {
+            "href": "http://localhost:8686/itens/1"
+        },
+        "tipoItem": {
+            "href": "http://localhost:8686/itens/1/tipoItem"
+        },
+        "pai": {
+            "href": "http://localhost:8686/itens/1/pai"
+        }
+    }
+}
+
+conjuntos
+{
+    "id": 1,
+    "nome": "MENU TABANKA",
+    "activo": true,
+    "ordem": 0,
+    "descPt": "desc_pt",
+    "descFr": "desc_fr",
+    "descIng": "desc_ing",
+    "fotoPath": "foto_path",
+    "dataCadastro": "2022-05-19 18:10:04",
+    "idUserCadastro": 1,
+    "_links": {
+        "self": {
+            "href": "http://localhost:8686/conjuntos/1"
+        },
+        "conjunto": {
+            "href": "http://localhost:8686/conjuntos/1"
+        },
+        "subConjuntos": {
+            "href": "http://localhost:8686/conjuntos/1/subConjuntos"
+        },
+        "itens": {
+            "href": "http://localhost:8686/conjuntos/1/itens"
+        },
+        "pai": {
+            "href": "http://localhost:8686/conjuntos/1/pai"
+        },
+        "tipoConjunto": {
+            "href": "http://localhost:8686/conjuntos/1/tipoConjunto"
+        }
+    }
+}
+
+tipoitens
+{
+    "nome": "BEBIDA",
+    "activo": true,
+    "dataCadastro": "2022-05-19T18:10:04",
+    "idUserCadastro": 1,
+    "_links": {
+        "self": {
+            "href": "http://localhost:8686/tipoitens/1"
+        },
+        "tipoItem": {
+            "href": "http://localhost:8686/tipoitens/1"
+        },
+        "itens": {
+            "href": "http://localhost:8686/tipoitens/1/itens"
+        }
+    }
+}
+
+tipoconjuntos
+{
+    "id": 10,
+    "nome": "dddd",
+    "activo": true,
+    "dataCadastro": "2022-05-17T16:55:27",
+    "idUserCadastro": 1,
+    "_links": {
+        "self": {
+            "href": "http://localhost:8686/tipoconjuntos/10"
+        },
+        "tipoConjunto": {
+            "href": "http://localhost:8686/tipoconjuntos/10"
+        },
+        "conjuntos": {
+            "href": "http://localhost:8686/tipoconjuntos/10/conjuntos"
+        }
+    }
+}
+
+
+
+
+
+#########################################################################################################
+
+LISTA
+tipoconjuntos -----------------------------------------------------------
+{
+    "_embedded": {
+        "tipoconjuntos": [
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "http://localhost:8686/tipoconjuntos"
+        },
+        "profile": {
+            "href": "http://localhost:8686/profile/tipoconjuntos"
+        },
+        "search": {
+            "href": "http://localhost:8686/tipoconjuntos/search"
+        }
+    },
+    "page": {
+        "size": 20,
+        "totalElements": 8,
+        "totalPages": 1,
+        "number": 0
+    }
+}
+
+tipoitens
+{
+    "_embedded": {
+        "tipoitens": [
+            
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "http://localhost:8686/tipoitens"
+        },
+        "profile": {
+            "href": "http://localhost:8686/profile/tipoitens"
+        },
+        "search": {
+            "href": "http://localhost:8686/tipoitens/search"
+        }
+    },
+    "page": {
+        "size": 20,
+        "totalElements": 3,
+        "totalPages": 1,
+        "number": 0
+    }
+}
+
+
+conjuntos------------------------------------------------------------------
+{
+    "_embedded": {
+        "conjuntos": [
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "http://localhost:8686/conjuntos"
+        },
+        "profile": {
+            "href": "http://localhost:8686/profile/conjuntos"
+        },
+        "search": {
+            "href": "http://localhost:8686/conjuntos/search"
+        }
+    },
+    "page": {
+        "size": 20,
+        "totalElements": 3,
+        "totalPages": 1,
+        "number": 0
+    }
+}
+
+itens
+{
+    "_embedded": {
+        "itens": [
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "http://localhost:8686/itens"
+        },
+        "profile": {
+            "href": "http://localhost:8686/profile/itens"
+        },
+        "search": {
+            "href": "http://localhost:8686/itens/search"
+        }
+    },
+    "page": {
+        "size": 20,
+        "totalElements": 3,
+        "totalPages": 1,
+        "number": 0
+    }
+}
+
+
