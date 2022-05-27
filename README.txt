@@ -38,6 +38,7 @@ ng generate module consulta --route consulta --module app.module
 
 ng generate module my-shared/modules/material-shared --module app.module
 ng generate module my-shared/modules/web-shared --module app.module
+ng generate module my-shared/modules/components --module app.module
 ng generate module my-core --module app.module
 
 
@@ -87,8 +88,9 @@ LOGIN
 
 
 APP:
-> ng g c components/pagina-nao-encontrado
-> ng g c components/inicio
+> ng g c my-shared/modules/components/pagina-nao-encontrado
+> ng g c my-shared/modules/components/inicio
+> ng g c my-shared/modules/components/dialogo-confirmacao
 
 SERVICES:
 
@@ -96,7 +98,8 @@ SERVICES:
 > ng g service my-core/services/http-interceptor
 
 ng generate service my-core/services/login
-ng g class my-core/models/login
+ng g class my-shared/models/login
+ng g class my-shared/models/response-pageable
 
 
 
