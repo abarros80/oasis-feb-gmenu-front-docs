@@ -5,56 +5,214 @@
 ------------------------------------
 
 > ng new front-gmenu
-ng add @angular/material
+> cd front-gmenu
+
+npm install --save @angular/material @angular/cdk @angular/animations @angular/flex-layout
+
 
 > cd front-gmenu
 > ng serve --open –-port=4201 --host=0.0.0.0
 
+----------------------------------------
+CRIAR NOSSA PALETA DE CORES:
+Ver no site a paleta criada:
+http://mcg.mbitson.com/#!?myprimarycolor=%23006068&myaccentcolor=%233d85c6&mywarncolor=%23cc0000
 
-(VER FICHEIRO INDEX:HTML, TEM AS ENTRADAS DE JQUERY; BOOTSTRAP E POPPER)
+1º) Criar um ficheiro my-styles.scss dentro da pasta: src/assets/css/
+2º) Ficheiro angular.json (na raiz do projecto) adicionar esse caminho (src/assets/css/my-styles.scss) no atributo "styles".
+3º) Apagar: "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
+
+----------------------------------------
+ADICIONAR FONTES:
+1º) Adicionar as fontes na pasta assets/fontes
+2º) No ficheiro my-styles.css adicionar o caminho para as fontes, ex:
+@font-face {
+  font-family: AllerLt;
+  src: local('Aller_Std_Lt.ttf'), url('../fontes/aller/Aller_Std_Lt.ttf');
+}
 
 _____________________________________________________MODULOS:
 
-
-
-ng generate module conjunto --route conjunto --module app.module
-
-ng generate module tipo-conjunto --route tipo-conjunto --module app.module
-
-ng generate module item --route item --module app.module
-
-ng generate module tipo-item --route tipo-item --module app.module
-
-
-ng generate module guest --route guest --module app.module
-
-ng generate module admin --route admin --module app.module
-
-ng generate module login --route login --module admin/admin.module
-
-ng generate module gestao --route gestao --module admin/admin.module
-
-ng generate module consulta --route consulta --module app.module
-
 ng generate module my-shared/modules/material-shared --module app.module
 ng generate module my-shared/modules/web-shared --module app.module
-ng generate module my-shared/modules/components --module app.module
+ng generate module my-shared/modules/components-shared --module app.module
 ng generate module my-core --module app.module
 
 
+ng generate module modules/guest --route guest --module app.module
+ng generate module modules/admin --route oa-admin --module app.module
+
+ng generate module modules/admin/login --route login --module modules/admin/admin.module
+ng generate module modules/admin/gestao --route gestao --module modules/admin/admin.module
+ng generate module modules/admin/consulta --route consulta --module modules/admin/admin.module
+ng generate module modules/admin/entidades --route entidades --module modules/admin/admin.module
+
+ng generate module modules/guest/hotels/porto-grande --route portogrande --module modules/guest/guest.module
+ng generate module modules/guest/hotels/praiamar --route praiamar --module modules/guest/guest.module
+ng generate module modules/guest/hotels/belorizonte --route belorizonte --module modules/guest/guest.module
+ng generate module modules/guest/hotels/salinas-sea --route salinassea --module modules/guest/guest.module
+
+
+ng generate module modules/admin/entidades/hotel --route hotel --module modules/admin/entidades/entidades.module
+ng generate module modules/admin/entidades/item --route item --module modules/admin/entidades/entidades.module
+ng generate module modules/admin/entidades/restaurante --route restaurante --module modules/admin/entidades/entidades.module
+ng generate module modules/admin/entidades/cardapio --route cardapio --module modules/admin/entidades/entidades.module
+ng generate module modules/admin/entidades/titem --route titem --module modules/admin/entidades/entidades.module
 
 
 _____________________________________________________END MODULOS
 
-_____________________________________________________COMPONENTES:
-Criar componentes:
+_____________________________________________________PARTILHADO
+
+COMPONENTES:
+ng g c my-shared/modules/components/pagina-nao-encontrado
+ng g c my-shared/modules/components/inicio
+ng g c my-shared/modules/components/dialogo-confirmacao
+
+SERVICES:
+ng g service my-core/services/api-crud
+ng g service my-core/services/http-interceptor
+ng generate service my-core/services/login
+
+MODELS:
+ng g class my-shared/models/login
+ng g class my-shared/models/response-pageable
+
+INTERFACES:
+
+ng generate interface my-shared/interfaces-shared/my-pages
+
+ng generate interface my-shared/interfaces-shared/i-log
+
+_____________________________________________________END PARTILHADO
+
+_____________________________________________________COMPONENTES/SERVICES/MODELS/INTERFACES:
 
 ADMIN:
-> ng g component admin/components/header/main_header
-> ng g component admin/components/footer/main_footer
+> ng g component modules/admin/components/header/main_header
+> ng g component modules/admin/components/footer/main_footer
 
 GESTAO
 > ng g component gestao/components/logout
+
+HOTEL:-------------------------------------------------------------------------------
+CRUD-HOTEL:
+ng g component modules/admin/entidades/hotel/components/main_menu --module modules/admin/entidades/hotel/hotel.module
+ng g component modules/admin/entidades/hotel/components/crud/listar --module modules/admin/entidades/hotel/hotel.module
+ng g component modules/admin/entidades/hotel/components/crud/apagar --module modules/admin/entidades/hotel/hotel.module
+ng g component modules/admin/entidades/hotel/components/crud/criaralterar --module modules/admin/entidades/hotel/hotel.module
+ng g component modules/admin/entidades/hotel/components/crud/detalhe  --module modules/admin/entidades/hotel/hotel.module
+
+MODEL-HOTEL:
+ng g class modules/admin/entidades/hotel/models/m-hotel
+
+SERVICE-HOTEL:
+ng generate service modules/admin/entidades/hotel/services/hotel-crud
+
+INTERFACE-HOTEL:
+
+ng generate interface modules/admin/entidades/hotel/interfaces/i-response-pageable-hotel
+ng generate interface modules/admin/entidades/hotel/interfaces/i-hotel
+
+
+RESTAURANTE:-------------------------------------------------------------------------------
+CRUD-RESTAURANTE:
+ng g component modules/admin/entidades/restaurante/components/main_menu --module modules/admin/entidades/restaurante/restaurante.module
+ng g component modules/admin/entidades/restaurante/components/crud/listar --module modules/admin/entidades/restaurante/restaurante.module
+ng g component modules/admin/entidades/restaurante/components/crud/apagar --module modules/admin/entidades/restaurante/restaurante.module
+ng g component modules/admin/entidades/restaurante/components/crud/criaralterar --module modules/admin/entidades/restaurante/restaurante.module
+ng g component modules/admin/entidades/restaurante/components/crud/detalhe  --module modules/admin/entidades/restaurante/restaurante.module
+
+MODEL-RESTAURANTE:
+ng g class modules/admin/entidades/restaurante/models/m-restaurante
+
+SERVICE-RESTAURANTE:
+ng generate service modules/admin/entidades/restaurante/services/restaurante-crud
+
+INTERFACE-RESTAURANTE:
+ng generate interface modules/admin/entidades/restaurante/interfaces/i-response-pageable-restaurante
+ng generate interface modules/admin/entidades/restaurante/interfaces/i-restaurante
+
+CARDAPIO:-------------------------------------------------------------------------------
+CRUD-CARDAPIO:
+ng g component modules/admin/entidades/cardapio/components/main_menu --module modules/admin/entidades/cardapio/cardapio.module
+ng g component modules/admin/entidades/cardapio/components/crud/listar --module modules/admin/entidades/cardapio/cardapio.module
+ng g component modules/admin/entidades/cardapio/components/crud/apagar --module modules/admin/entidades/cardapio/cardapio.module
+ng g component modules/admin/entidades/cardapio/components/crud/criaralterar --module modules/admin/entidades/cardapio/cardapio.module
+ng g component modules/admin/entidades/cardapio/components/crud/detalhe  --module modules/admin/entidades/cardapio/cardapio.module
+
+MODEL-CARDAPIO:
+ng g class modules/admin/entidades/cardapio/models/m-cardapio
+
+SERVICE-CARDAPIO:
+ng generate service modules/admin/entidades/cardapio/services/cardapio-crud
+
+INTERFACE-CARDAPIO:
+ng generate interface modules/admin/entidades/cardapio/interfaces/i-response-pageable-cardapio
+ng generate interface modules/admin/entidades/cardapio/interfaces/i-cardapio
+
+
+ITEM:-------------------------------------------------------------------------------
+CRUD-ITEM:
+ng g component modules/admin/entidades/item/components/main_menu --module modules/admin/entidades/item/item.module
+ng g component modules/admin/entidades/item/components/crud/listar --module modules/admin/entidades/item/item.module
+ng g component modules/admin/entidades/item/components/crud/apagar --module modules/admin/entidades/item/item.module
+ng g component modules/admin/entidades/item/components/crud/criaralterar --module modules/admin/entidades/item/item.module
+ng g component modules/admin/entidades/item/components/crud/detalhe  --module modules/admin/entidades/item/item.module
+
+MODEL-ITEM:
+ng g class modules/admin/entidades/item/models/m-item
+
+SERVICE-ITEM:
+ng generate service modules/admin/entidades/item/services/item-crud
+
+INTERFACE-ITEM:
+ng generate interface modules/admin/entidades/item/interfaces/i-response-pageable-item
+ng generate interface modules/admin/entidades/item/interfaces/i-item
+
+TIPO ITEM:-------------------------------------------------------------------------------
+CRUD-ITEM:
+ng g component modules/admin/entidades/titem/components/main_menu --module modules/admin/entidades/titem/titem.module
+ng g component modules/admin/entidades/titem/components/crud/listar --module modules/admin/entidades/titem/titem.module
+ng g component modules/admin/entidades/titem/components/crud/apagar --module modules/admin/entidades/titem/titem.module
+ng g component modules/admin/entidades/titem/components/crud/criaralterar --module modules/admin/entidades/titem/titem.module
+ng g component modules/admin/entidades/titem/components/crud/detalhe  --module modules/admin/entidades/titem/titem.module
+
+MODEL-ITEM:
+ng g class modules/admin/entidades/titem/models/m-titem
+
+SERVICE-ITEM:
+ng generate service modules/admin/entidades/titem/services/titem-crud
+
+INTERFACE-ITEM:
+ng generate interface modules/admin/entidades/titem/interfaces/i-response-pageable-titem
+ng generate interface modules/admin/entidades/titem/interfaces/i-titem
+
+
+
+
+
+
+GUEST:---------------------------------------------------------------------------
+> ng g component guest/components/header
+> ng g component guest/components/footer
+
+
+_____________________________________________________END COMPONENTES/SERVICES/MODELS/INTERFACES:
+
+
+PORTOGRANDE
+ng g component modules/guest/hotels/porto-grande/lobby --module modules/guest/hotels/porto-grande/porto-grande.module
+ng g component modules/guest/hotels/porto-grande/kalimba --module modules/guest/hotels/porto-grande/porto-grande.module
+ng g component modules/guest/hotels/porto-grande/restaurante --module modules/guest/hotels/porto-grande/porto-grande.module
+
+
+
+
+
+
+
+
 
 
 CONJUNTO
@@ -88,18 +246,10 @@ LOGIN
 
 
 APP:
-> ng g c my-shared/modules/components/pagina-nao-encontrado
-> ng g c my-shared/modules/components/inicio
-> ng g c my-shared/modules/components/dialogo-confirmacao
 
-SERVICES:
 
-> ng g service my-core/services/api-crud
-> ng g service my-core/services/http-interceptor
 
-ng generate service my-core/services/login
-ng g class my-shared/models/login
-ng g class my-shared/models/response-pageable
+
 
 
 

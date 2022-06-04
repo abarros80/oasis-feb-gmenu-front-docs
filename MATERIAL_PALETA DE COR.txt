@@ -1,0 +1,7 @@
+CRIAR NOSSA PALETA DE CORES:
+Ver no site a paleta criada:
+http://mcg.mbitson.com/#!?myprimarycolor=%23006068&myaccentcolor=%233d85c6&mywarncolor=%23cc0000
+
+1º) Criar um ficheiro my-styles.scss dentro da pasta: src/assets/css/
+2º) Ficheiro angular.json (na raiz do projecto) adicionar esse caminho (src/assets/css/my-styles.scss) no atributo "styles".
+3º) Apagar: "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
