@@ -58,6 +58,8 @@ ng generate module modules/admin/entidades/item --route item --module modules/ad
 ng generate module modules/admin/entidades/restaurante --route restaurante --module modules/admin/entidades/entidades.module
 ng generate module modules/admin/entidades/cardapio --route cardapio --module modules/admin/entidades/entidades.module
 ng generate module modules/admin/entidades/titem --route titem --module modules/admin/entidades/entidades.module
+ng generate module modules/admin/entidades/user --route user --module modules/admin/entidades/entidades.module
+ng generate module modules/admin/entidades/role --route role --module modules/admin/entidades/entidades.module
 
 
 _____________________________________________________END MODULOS
@@ -113,6 +115,7 @@ INTERFACE-HOTEL:
 
 ng generate interface modules/admin/entidades/hotel/interfaces/i-response-pageable-hotel
 ng generate interface modules/admin/entidades/hotel/interfaces/i-hotel
+ng generate interface modules/admin/entidades/hotel/interfaces/i-req-hotel
 
 
 RESTAURANTE:-------------------------------------------------------------------------------
@@ -169,6 +172,7 @@ ng generate service modules/admin/entidades/item/services/item-crud
 INTERFACE-ITEM:
 ng generate interface modules/admin/entidades/item/interfaces/i-response-pageable-item
 ng generate interface modules/admin/entidades/item/interfaces/i-item
+ng generate interface modules/admin/entidades/item/interfaces/i-req-item
 
 TIPO ITEM:-------------------------------------------------------------------------------
 CRUD-ITEM:
@@ -187,6 +191,25 @@ ng generate service modules/admin/entidades/titem/services/titem-crud
 INTERFACE-ITEM:
 ng generate interface modules/admin/entidades/titem/interfaces/i-response-pageable-titem
 ng generate interface modules/admin/entidades/titem/interfaces/i-titem
+
+USER:-------------------------------------------------------------------------------
+CRUD-USER:
+ng g component modules/admin/entidades/user/components/main_menu --module modules/admin/entidades/user/user.module
+ng g component modules/admin/entidades/user/components/crud/listar  --module modules/admin/entidades/user.module
+ng g component modules/admin/entidades/user/components/crud/apagar  --module modules/admin/entidades/user.module
+ng g component modules/admin/entidades/user/components/crud/criaralterar --module modules/admin/entidades/user/user.module
+ng g component modules/admin/entidades/user/components/crud/detalhe --module modules/admin/entidades/user.module
+
+MODEL-USER:
+ng g class modules/admin/entidades/user/models/m-user
+
+SERVICE-USER:
+ng generate service modules/admin/entidades/user/services/user-crud
+
+INTERFACE-USER:
+ng generate interface modules/admin/entidades/user/interfaces/i-response-pageable-user
+ng generate interface modules/admin/entidades/user/interfaces/i-user
+ng generate interface modules/admin/entidades/user/interfaces/i-req-user
 
 
 
