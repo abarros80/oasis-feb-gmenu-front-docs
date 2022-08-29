@@ -31,6 +31,10 @@ ADICIONAR FONTES:
   src: local('Aller_Std_Lt.ttf'), url('../fontes/aller/Aller_Std_Lt.ttf');
 }
 
+ADICIONAR Material Icons
+No index.html file:
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 _____________________________________________________MODULOS:
 
 ng generate module my-shared/modules/material-shared --module app.module
@@ -67,14 +71,19 @@ _____________________________________________________END MODULOS
 _____________________________________________________PARTILHADO
 
 COMPONENTES:
-ng g c my-shared/modules/components/pagina-nao-encontrado
-ng g c my-shared/modules/components/inicio
-ng g c my-shared/modules/components/dialogo-confirmacao
+ng g c my-shared/modules/components-shared/pagina-nao-encontrado
+ng g c my-shared/modules/components-shared/inicio
+ng g c my-shared/modules/components-shared/dialogo-confirmacao
+ng g c my-shared/modules/components-shared/dialogo-alerta
 
 SERVICES:
 ng g service my-core/services/api-crud
 ng g service my-core/services/http-interceptor
 ng generate service my-core/services/login
+ng generate service my-core/services/dialog
+
+GUARDAS:
+> ng g guard  my-core/guards/auth 
 
 MODELS:
 ng g class my-shared/models/login
@@ -85,6 +94,9 @@ INTERFACES:
 ng generate interface my-shared/interfaces-shared/my-pages
 
 ng generate interface my-shared/interfaces-shared/i-log
+
+ng generate interface my-shared/interfaces-shared/i-confirm-dialog-data
+ng generate interface my-shared/interfaces-shared/i-alert-dialog-data
 
 _____________________________________________________END PARTILHADO
 
@@ -168,6 +180,11 @@ ng g class modules/admin/entidades/item/models/m-item
 
 SERVICE-ITEM:
 ng generate service modules/admin/entidades/item/services/item-crud
+
+GUARDAS-ITEM:
+
+ng generate guard modules/admin/entidades/item/guards/item
+ng generate guard modules/admin/entidades/item/guards/item-desactivate
 
 INTERFACE-ITEM:
 ng generate interface modules/admin/entidades/item/interfaces/i-response-pageable-item
