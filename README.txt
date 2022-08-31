@@ -147,6 +147,7 @@ ng generate service modules/admin/entidades/restaurante/services/restaurante-cru
 INTERFACE-RESTAURANTE:
 ng generate interface modules/admin/entidades/restaurante/interfaces/i-response-pageable-restaurante
 ng generate interface modules/admin/entidades/restaurante/interfaces/i-restaurante
+ng generate interface modules/admin/entidades/restaurante/interfaces/i-req-restaurante
 
 CARDAPIO:-------------------------------------------------------------------------------
 CRUD-CARDAPIO:
@@ -165,6 +166,7 @@ ng generate service modules/admin/entidades/cardapio/services/cardapio-crud
 INTERFACE-CARDAPIO:
 ng generate interface modules/admin/entidades/cardapio/interfaces/i-response-pageable-cardapio
 ng generate interface modules/admin/entidades/cardapio/interfaces/i-cardapio
+ng generate interface modules/admin/entidades/cardapio/interfaces/i-req-cardapio
 
 
 ITEM:-------------------------------------------------------------------------------
@@ -208,6 +210,7 @@ ng generate service modules/admin/entidades/titem/services/titem-crud
 INTERFACE-ITEM:
 ng generate interface modules/admin/entidades/titem/interfaces/i-response-pageable-titem
 ng generate interface modules/admin/entidades/titem/interfaces/i-titem
+ng generate interface modules/admin/entidades/titem/interfaces/i-req-titem
 
 USER:-------------------------------------------------------------------------------
 CRUD-USER:
