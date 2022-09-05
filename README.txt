@@ -149,6 +149,9 @@ ng generate interface modules/admin/entidades/restaurante/interfaces/i-response-
 ng generate interface modules/admin/entidades/restaurante/interfaces/i-restaurante
 ng generate interface modules/admin/entidades/restaurante/interfaces/i-req-restaurante
 
+PIPE-RESTAURANTE:
+ng generate pipe modules/admin/entidades/restaurante/pipes/get-hotel-by-url
+
 CARDAPIO:-------------------------------------------------------------------------------
 CRUD-CARDAPIO:
 ng g component modules/admin/entidades/cardapio/components/main_menu --module modules/admin/entidades/cardapio/cardapio.module
@@ -167,6 +170,10 @@ INTERFACE-CARDAPIO:
 ng generate interface modules/admin/entidades/cardapio/interfaces/i-response-pageable-cardapio
 ng generate interface modules/admin/entidades/cardapio/interfaces/i-cardapio
 ng generate interface modules/admin/entidades/cardapio/interfaces/i-req-cardapio
+
+PIPE-CARDAPIO:
+ng generate pipe modules/admin/entidades/cardapio/pipes/get-hotel-by-url
+ng generate pipe modules/admin/entidades/cardapio/pipes/get-restaurante-by-url
 
 
 ITEM:-------------------------------------------------------------------------------
