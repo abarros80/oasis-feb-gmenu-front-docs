@@ -81,7 +81,8 @@ ng g service my-core/services/api-crud
 ng g service my-core/services/http-interceptor
 ng generate service my-core/services/login
 ng generate service my-core/services/dialog
-
+ng generate service my-core/services/oa-pdf
+ng generate service my-core/services/oa-file-upload
 GUARDAS:
 > ng g guard  my-core/guards/auth 
 
@@ -127,6 +128,7 @@ INTERFACE-HOTEL:
 
 ng generate interface modules/admin/entidades/hotel/interfaces/i-response-pageable-hotel
 ng generate interface modules/admin/entidades/hotel/interfaces/i-hotel
+ng generate interface modules/admin/entidades/hotel/interfaces/i-links-hotel
 ng generate interface modules/admin/entidades/hotel/interfaces/i-req-hotel
 
 
@@ -147,6 +149,7 @@ ng generate service modules/admin/entidades/restaurante/services/restaurante-cru
 INTERFACE-RESTAURANTE:
 ng generate interface modules/admin/entidades/restaurante/interfaces/i-response-pageable-restaurante
 ng generate interface modules/admin/entidades/restaurante/interfaces/i-restaurante
+ng generate interface modules/admin/entidades/restaurante/interfaces/i-links-restaurante
 ng generate interface modules/admin/entidades/restaurante/interfaces/i-req-restaurante
 
 PIPE-RESTAURANTE:
@@ -169,6 +172,7 @@ ng generate service modules/admin/entidades/cardapio/services/cardapio-crud
 INTERFACE-CARDAPIO:
 ng generate interface modules/admin/entidades/cardapio/interfaces/i-response-pageable-cardapio
 ng generate interface modules/admin/entidades/cardapio/interfaces/i-cardapio
+ng generate interface modules/admin/entidades/cardapio/interfaces/i-links-cardapio
 ng generate interface modules/admin/entidades/cardapio/interfaces/i-req-cardapio
 
 PIPE-CARDAPIO:
@@ -198,25 +202,27 @@ ng generate guard modules/admin/entidades/item/guards/item-desactivate
 INTERFACE-ITEM:
 ng generate interface modules/admin/entidades/item/interfaces/i-response-pageable-item
 ng generate interface modules/admin/entidades/item/interfaces/i-item
+ng generate interface modules/admin/entidades/item/interfaces/i-links-item
 ng generate interface modules/admin/entidades/item/interfaces/i-req-item
 
 TIPO ITEM:-------------------------------------------------------------------------------
-CRUD-ITEM:
+CRUD-TITEM:
 ng g component modules/admin/entidades/titem/components/main_menu --module modules/admin/entidades/titem/titem.module
 ng g component modules/admin/entidades/titem/components/crud/listar --module modules/admin/entidades/titem/titem.module
 ng g component modules/admin/entidades/titem/components/crud/apagar --module modules/admin/entidades/titem/titem.module
 ng g component modules/admin/entidades/titem/components/crud/criaralterar --module modules/admin/entidades/titem/titem.module
 ng g component modules/admin/entidades/titem/components/crud/detalhe  --module modules/admin/entidades/titem/titem.module
 
-MODEL-ITEM:
+MODEL-TITEM:
 ng g class modules/admin/entidades/titem/models/m-titem
 
-SERVICE-ITEM:
+SERVICE-TITEM:
 ng generate service modules/admin/entidades/titem/services/titem-crud
 
-INTERFACE-ITEM:
+INTERFACE-TITEM:
 ng generate interface modules/admin/entidades/titem/interfaces/i-response-pageable-titem
 ng generate interface modules/admin/entidades/titem/interfaces/i-titem
+ng generate interface modules/admin/entidades/titem/interfaces/i-links-titem
 ng generate interface modules/admin/entidades/titem/interfaces/i-req-titem
 
 USER:-------------------------------------------------------------------------------

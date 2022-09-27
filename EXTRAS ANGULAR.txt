@@ -1,0 +1,98 @@
+========ngx-charts===========
+
+==Installing
+1) Install @swimlane/ngx-charts using npm
+npm install @swimlane/ngx-charts --save
+
+
+
+2) Dependencies
+
+Install d3 using npm
+npm install d3 --save
+
+Install @types/d3-shape using npm
+npm install @types/d3-shape --save
+
+
+3) Pode ser preciso
+we need to add @angular/cdk
+using the following
+
+npm install @angular/cdk --save
+
+4) 
+Import NgxChartsModule from 'ngx-charts' in AppModule.
+ngx-charts also required the BrowserAnimationsModule. Import it in AppModule
+
+import { NgxChartsModule }from '@swimlane/ngx-charts';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+...
+  imports: [
+    ...
+    BrowserAnimationsModule,
+    NgxChartsModule
+  ],
+
+
+==Bootstrap
+
+npm install bootstrap
+
+
+========ng2-charts===========
+
+1) Install the ng2-charts and chart.js package using following commands
+
+Installation
+
+You can install ng2-charts by using the Angular CLI:
+
+ng add ng2-charts
+
+Manual install through package managers
+
+npm install --save @angular/cdk
+
+npm install @angular/cdk --save
+
+npm install ng2-charts chart.js --save
+
+========pdfmake===========
+
+Install PDFMake library
+
+npm install --save pdfmake
+npm i --save-dev @types/pdfmake
+
+Once it is installed, to use PDFMake in the browser we need to import pdfmake.js
+and vfs_fonts.js
+file. Add the following statements on top of the component or service where you want to use PDFMake.
+
+In our application, we will generate a PDF in the AppComponent. So we will add the following two statements on top of the AppComponent
+import pdfMake from "pdfmake/build/pdfmake";  
+import pdfFonts from "pdfmake/build/vfs_fonts";  
+pdfMake.vfs = pdfFonts.pdfMake.vfs;   
+
+Ver:
+https://www.anycodings.com/1questions/607005/angular-11-and-pdfmake-error-ts2345-argument-of-type-is-not-assignable-to-parameter-of-type-tdocumentdefinitions
+
+So, I've changed import of pdfMake library from
+
+import * as pdfMake from "pdfmake/build/pdfmake"; 
+
+to
+
+const pdfMake = require('pdfmake/build/pdfmake.js');
+
+then installed node types by npm:
+
+npm i @types/node
+
+and finally made some changes in tsconfig.app.json file in your Angular app root directoty (add "node" in square brackets in line):
+
+"types": []
+
+after changes:
+
+"types": ["node"]
