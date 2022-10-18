@@ -39,6 +39,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 npm install bootstrap
 
+vi angular.json:
+ "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+       		...
+            ],
+
 
 ========ng2-charts===========
 
@@ -96,3 +102,25 @@ and finally made some changes in tsconfig.app.json file in your Angular app root
 after changes:
 
 "types": ["node"]
+
+
+==============Upload DownLoad Files================
+
+https://www.bezkoder.com/angular-13-spring-boot-file-upload/
+https://www.bezkoder.com/spring-boot-file-upload/
+https://www.bezkoder.com/spring-boot-upload-file-database/
+
+https://www.ngdevelop.tech/export-to-excel-in-angular-6/
+
+==============Exporting Data to Excel in Angular==========
+
+https://blog.bitsrc.io/exporting-data-to-excel-in-angular-1d1194e8be29
+
+npm install xlsx file-saver --save
+
+=============Preview Image=============
+
+https://www.bezkoder.com/angular-material-14-image-upload-preview/
+
+Angular Material 14 Image upload with Preview example
+

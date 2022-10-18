@@ -83,6 +83,7 @@ ng generate service my-core/services/login
 ng generate service my-core/services/dialog
 ng generate service my-core/services/oa-pdf
 ng generate service my-core/services/oa-file-upload
+ng generate service my-core/services/oa-exel
 GUARDAS:
 > ng g guard  my-core/guards/auth 
 
