@@ -51,6 +51,7 @@ ng generate module modules/admin/gestao --route gestao --module modules/admin/ad
 ng generate module modules/admin/consulta --route consulta --module modules/admin/admin.module
 ng generate module modules/admin/entidades --route entidades --module modules/admin/admin.module
 
+
 ng generate module modules/guest/hotels/porto-grande --route portogrande --module modules/guest/guest.module
 ng generate module modules/guest/hotels/praiamar --route praiamar --module modules/guest/guest.module
 ng generate module modules/guest/hotels/belorizonte --route belorizonte --module modules/guest/guest.module
@@ -64,6 +65,10 @@ ng generate module modules/admin/entidades/cardapio --route cardapio --module mo
 ng generate module modules/admin/entidades/titem --route titem --module modules/admin/entidades/entidades.module
 ng generate module modules/admin/entidades/user --route user --module modules/admin/entidades/entidades.module
 ng generate module modules/admin/entidades/role --route role --module modules/admin/entidades/entidades.module
+
+
+
+ng generate module modules/admin/entidades/intervencao --route intervencao --module modules/admin/entidades/entidades.module
 
 
 _____________________________________________________END MODULOS
@@ -84,6 +89,7 @@ ng generate service my-core/services/dialog
 ng generate service my-core/services/oa-pdf
 ng generate service my-core/services/oa-file-upload
 ng generate service my-core/services/oa-exel
+
 GUARDAS:
 > ng g guard  my-core/guards/auth 
 
@@ -225,6 +231,35 @@ ng generate interface modules/admin/entidades/titem/interfaces/i-response-pageab
 ng generate interface modules/admin/entidades/titem/interfaces/i-titem
 ng generate interface modules/admin/entidades/titem/interfaces/i-links-titem
 ng generate interface modules/admin/entidades/titem/interfaces/i-req-titem
+
+
+
+
+
+INTERVENCAO:-------------------------------------------------------------------------------
+CRUD-INTERVENCAO:
+ng g component modules/admin/entidades/intervencao/components/main_menu --module modules/admin/entidades/intervencao/intervencao.module
+ng g component modules/admin/entidades/intervencao/components/crud/listar --module modules/admin/entidades/intervencao/intervencao.module
+ng g component modules/admin/entidades/intervencao/components/crud/apagar --module modules/admin/entidades/intervencao/intervencao.module
+ng g component modules/admin/entidades/intervencao/components/crud/criaralterar --module modules/admin/entidades/intervencao/intervencao.module
+ng g component modules/admin/entidades/intervencao/components/crud/detalhe  --module modules/admin/entidades/intervencao/intervencao.module
+
+MODEL-INTERVENCAO:
+ng g class modules/admin/entidades/intervencao/models/m-intervencao
+
+SERVICE-INTERVENCAO:
+ng generate service modules/admin/entidades/intervencao/services/intervencao-crud
+
+INTERFACE-INTERVENCAO:
+ng generate interface modules/admin/entidades/intervencao/interfaces/i-response-pageable-intervencao
+ng generate interface modules/admin/entidades/intervencao/interfaces/i-intervencao
+ng generate interface modules/admin/entidades/intervencao/interfaces/i-links-intervencao
+ng generate interface modules/admin/entidades/intervencao/interfaces/i-req-intervencao
+
+
+
+
+
 
 USER:-------------------------------------------------------------------------------
 CRUD-USER:
